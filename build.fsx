@@ -18,9 +18,9 @@ Target "core-build" (fun () ->
 Target "core-tests" (fun () -> 
     RestorePackages "Trivial.Core.sln"
     
-    MSBuild "Trivial/Trivial.Core/bin/Debug" "Build" [ ("Configuration", "Debug"); ("Platform", "Any CPU") ] [ "Trivial.Core.sln" ] |> ignore
+    MSBuild "Trivial/Trivial.Tests.Unit/bin/Debug" "Build" [ ("Configuration", "Debug"); ("Platform", "Any CPU") ] [ "Trivial.Core.sln" ] |> ignore
     
-    RunNUnitTests "Trivial/Trivial.Tests.Unit/bin/Debug/Trivial.Tests.Unit.dll" "Trivial/testRuns/testresults.xml"
+    RunNUnitTests "Trivial/Trivial.Tests.Unit/bin/Debug/Trivial.Tests.Unit.dll" "testRuns/testresults.xml"
 )
 
 //DONE

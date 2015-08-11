@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{90B31336-32EB-443E-9FA7-1A3A1DBA6823}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trivial.Core", "Trivial\Trivial.Core\Trivial.Core.csproj", "{8338F2AE-310B-4EF2-B858-EEDCC5118E71}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trivial.Forms", "Trivial\Trivial.Forms\Trivial.Forms.csproj", "{CF85F70F-CB27-4E27-89CB-3AE5D15FC22E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Platforms", "Platforms", "{A1DD2C77-27B7-47F8-85C5-E64113028CAE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trivial.Droid", "Trivial\Trivial.Droid\Trivial.Droid.csproj", "{699461A0-CDC6-4B3B-8961-6A6112F412DD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{699461A0-CDC6-4B3B-8961-6A6112F412DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{699461A0-CDC6-4B3B-8961-6A6112F412DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{699461A0-CDC6-4B3B-8961-6A6112F412DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{699461A0-CDC6-4B3B-8961-6A6112F412DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8338F2AE-310B-4EF2-B858-EEDCC5118E71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8338F2AE-310B-4EF2-B858-EEDCC5118E71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8338F2AE-310B-4EF2-B858-EEDCC5118E71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8338F2AE-310B-4EF2-B858-EEDCC5118E71}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF85F70F-CB27-4E27-89CB-3AE5D15FC22E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF85F70F-CB27-4E27-89CB-3AE5D15FC22E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF85F70F-CB27-4E27-89CB-3AE5D15FC22E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF85F70F-CB27-4E27-89CB-3AE5D15FC22E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8338F2AE-310B-4EF2-B858-EEDCC5118E71} = {90B31336-32EB-443E-9FA7-1A3A1DBA6823}
+		{CF85F70F-CB27-4E27-89CB-3AE5D15FC22E} = {90B31336-32EB-443E-9FA7-1A3A1DBA6823}
+		{699461A0-CDC6-4B3B-8961-6A6112F412DD} = {A1DD2C77-27B7-47F8-85C5-E64113028CAE}
+	EndGlobalSection
+EndGlobal

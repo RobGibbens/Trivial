@@ -56,18 +56,4 @@
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <ItemGroup>
-    <ProjectReference Include="..\Trivial.iOS\Trivial.iOS.csproj">
-      <Project>{382CA8E1-D7E8-4959-8F32-8C3A1991F6A0}</Project>
-      <Name>Trivial.iOS</Name>
-      <ReferenceOutputAssembly>False</ReferenceOutputAssembly>
-      <Private>False</Private>
-    </ProjectReference>
-    <ProjectReference Include="..\Trivial.Droid\Trivial.Droid.csproj">
-      <Project>{699461A0-CDC6-4B3B-8961-6A6112F412DD}</Project>
-      <Name>Trivial.Droid</Name>
-      <ReferenceOutputAssembly>False</ReferenceOutputAssembly>
-      <Private>False</Private>
-    </ProjectReference>
-  </ItemGroup>
 </Project>

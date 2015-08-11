@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{90B31336-32EB-443E-9FA7-1A3A1DBA6823}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trivial.Core", "Trivial\Trivial.Core\Trivial.Core.csproj", "{8338F2AE-310B-4EF2-B858-EEDCC5118E71}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{29B37850-1FDB-4F49-922A-177C38729F12}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trivial.Tests.Unit", "Trivial\Trivial.Tests.Unit\Trivial.Tests.Unit.csproj", "{49EDEA7E-32CD-4510-96A1-E1D2BBB79128}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{49EDEA7E-32CD-4510-96A1-E1D2BBB79128}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49EDEA7E-32CD-4510-96A1-E1D2BBB79128}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49EDEA7E-32CD-4510-96A1-E1D2BBB79128}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49EDEA7E-32CD-4510-96A1-E1D2BBB79128}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8338F2AE-310B-4EF2-B858-EEDCC5118E71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8338F2AE-310B-4EF2-B858-EEDCC5118E71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8338F2AE-310B-4EF2-B858-EEDCC5118E71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8338F2AE-310B-4EF2-B858-EEDCC5118E71}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8338F2AE-310B-4EF2-B858-EEDCC5118E71} = {90B31336-32EB-443E-9FA7-1A3A1DBA6823}
+		{49EDEA7E-32CD-4510-96A1-E1D2BBB79128} = {29B37850-1FDB-4F49-922A-177C38729F12}
+	EndGlobalSection
+EndGlobal

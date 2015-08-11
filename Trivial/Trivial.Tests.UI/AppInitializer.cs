@@ -20,7 +20,8 @@ namespace Trivial.Tests.UI
 
             return ConfigureApp
                 .iOS
-				.PreferIdeSettings()
+				.AppBundle("../../../../testRuns/apps/TrivialiOS.app")
+				//.PreferIdeSettings()
                 .StartApp();
         }
     }

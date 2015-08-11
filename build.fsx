@@ -7,6 +7,10 @@ open System.Linq
 open BuildHelpers
 open Fake.XamarinHelper
 
+Target "all" (fun() ->
+   trace "Running all"
+)
+
 //DONE
 Target "core-build" (fun () ->
     RestorePackages "Trivial.Core.sln"
@@ -141,12 +145,15 @@ Target "android-testcloud" (fun () ->
 "core-build"
   ==> "core-tests"
 
+//IOS
 "ios-build"
   ==> "ios-uitests"
 
-"ios-testcloud"
-  ==> "ios-uitests"
-  
+"ios-uitests"
+  ==> "ios-testcloud"
+
+ 
+//ANDROID  
 "android-build"
   ==> "android-uitests"
 
@@ -156,4 +163,15 @@ Target "android-testcloud" (fun () ->
 "android-build"
   ==> "android-package"
 
+"core-build"
+  ==> "core-tests"
+  ==> "ios-uitests"
+  // ==> "ios-testcloud"
+  //==> "ios-adhoc"
+  //==> "ios-appstore"
+  ==> "android-uitests"
+  //==> "android-testcloud"
+  //==> "android-package"
+  ==> "all"
+  
 RunTarget() 

@@ -38,14 +38,14 @@ let RunUITests appPath =
 
     MSBuild "Trivial/Trivial.Tests.UI/bin/Debug" "Build" [ ("Configuration", "Debug"); ("Platform", "Any CPU") ] [ "Trivial.UITests.sln" ] |> ignore
 
-    RunNUnitTests "Trivial/Trivial.Tests.UI/bin/Debug/Trivial.Tests.UI.dll" "Trivial/testRuns/testresults.xml"
+    RunNUnitTests "Trivial/Trivial.Tests.UI/bin/Debug/Trivial.Tests.UI.dll" "testRuns/testresults.xml"
 
 let RunTestCloudTests appFile deviceList =
-    System.Console.WriteLine("Restoring packages from Trivial.Tests.UI.sln")
+    System.Console.WriteLine("Restoring packages from Trivial.UITests.sln")
     
-    RestorePackages "Trivial/Trivial.Tests.UI/Trivial.Tests.UI.sln"
+    RestorePackages "Trivial.UITests.sln"
 
-    MSBuild "Trivial/Trivial.Tests.UI/bin/Debug" "Build" [ ("Configuration", "Debug"); ("Platform", "Any CPU") ] [ "Trivial/Trivial.Tests.UI/Trivial.Tests.UI.sln" ] |> ignore
+    MSBuild "Trivial/Trivial.Tests.UI/bin/Debug" "Build" [ ("Configuration", "Debug"); ("Platform", "Any CPU") ] [ "Trivial.UITests.sln" ] |> ignore
 
     //TODO Don't hardcode token : let testCloudToken = Environment.GetEnvironmentVariable("env.TestCloudApiToken")
     let testCloudToken = "10591f4e6d90c77a4dc7e3a37d7fafc2"

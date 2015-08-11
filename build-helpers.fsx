@@ -17,7 +17,7 @@ let RestorePackages solutionFile =
 
 let RunNUnitTests dllPath xmlPath =
     Exec "/Library/Frameworks/Mono.framework/Versions/Current/bin/nunit-console4" (dllPath + " -xml=" + xmlPath)
-    TeamCityHelper.sendTeamCityNUnitImport xmlPath
+    if File.Exists(xmlPath) then TeamCityHelper.sendTeamCityNUnitImport xmlPath
 
 let RunUITests appPath =
     let testAppFolder = Path.Combine("testRuns", "apps")

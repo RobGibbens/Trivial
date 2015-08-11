@@ -14,11 +14,13 @@ namespace Trivial.Tests.UI
             {
                 return ConfigureApp
                     .Android
+					.PreferIdeSettings()
                     .StartApp();
             }
 
             return ConfigureApp
                 .iOS
+				.PreferIdeSettings()
                 .StartApp();
         }
     }

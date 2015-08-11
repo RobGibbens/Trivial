@@ -16,7 +16,7 @@ let RestorePackages solutionFile =
     solutionFile |> RestoreComponents (fun defaults -> {defaults with ToolPath = "tools/xpkg/xamarin-component.exe" })
 
 let RunNUnitTests dllPath xmlPath =
-    let testResultsFolder = "testResults"
+    let testResultsFolder = "testRuns"
     if Directory.Exists(testResultsFolder) then Directory.Delete(testResultsFolder, true)
     Directory.CreateDirectory(testResultsFolder) |> ignore
     Exec "/Library/Frameworks/Mono.framework/Versions/Current/bin/nunit-console4" (dllPath + " -xml=" + xmlPath)

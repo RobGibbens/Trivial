@@ -35,6 +35,13 @@ Target "ios-build" (fun () ->
         })
 )
 
+//TODO : Test
+Target "ios-uitests" (fun () ->
+    let appPath = Directory.EnumerateDirectories(Path.Combine("Trivial", "Trivial.iOS", "bin", "iPhoneSimulator", "Debug"), "*.app").First()
+
+    RunUITests appPath
+)
+
 //TODO :  Needs publishing profile
 Target "ios-adhoc" (fun () ->
     RestorePackages "Trivial.iOS.sln"
@@ -73,13 +80,6 @@ Target "ios-appstore" (fun () ->
 )
 
 //TODO : Test
-Target "ios-uitests" (fun () ->
-    let appPath = Directory.EnumerateDirectories(Path.Combine("Trivial", "Trivial.iOS", "bin", "iPhoneSimulator", "Debug"), "*.app").First()
-
-    RunUITests appPath
-)
-
-//TODO : Test
 Target "ios-testcloud" (fun () ->
     let appPath = Directory.EnumerateFiles(Path.Combine("Trivial", "Trivial.iOS", "bin", "iPhone", "Debug"), "*.ipa").First()
 
@@ -91,6 +91,20 @@ Target "android-build" (fun () ->
     RestorePackages "Trivial.Droid.sln"
 
     MSBuild "Trivial/Trivial.Droid/bin/Release" "Build" [ ("Configuration", "Release") ] [ "Trivial.Droid.sln" ] |> ignore
+)
+
+//TODO : Test
+Target "android-uitests" (fun () ->
+    AndroidPackage (fun defaults ->
+        {defaults with
+            ProjectPath = "Trivial/Trivial.Droid/Trivial.Droid.csproj"
+            Configuration = "Release"
+            OutputPath = "Trivial/Trivial.Droid/bin/Release"
+        }) |> ignore
+
+    let appPath = Directory.EnumerateFiles(Path.Combine("Trivial", "Trivial.Droid", "bin", "Release"), "*.apk", SearchOption.AllDirectories).First()
+
+    RunUITests appPath
 )
 
 //TODO : Needs keystore
@@ -108,20 +122,6 @@ Target "android-package" (fun () ->
             KeystoreAlias = "Trivial"
         })
     |> fun file -> TeamCityHelper.PublishArtifact file.FullName
-)
-
-//TODO : Test
-Target "android-uitests" (fun () ->
-    AndroidPackage (fun defaults ->
-        {defaults with
-            ProjectPath = "Trivial/Trivial.Droid/Trivial.Droid.csproj"
-            Configuration = "Release"
-            OutputPath = "Trivial/Trivial.Droid/bin/Release"
-        }) |> ignore
-
-    let appPath = Directory.EnumerateFiles(Path.Combine("Trivial", "Trivial.Droid", "bin", "Release"), "*.apk", SearchOption.AllDirectories).First()
-
-    RunUITests appPath
 )
 
 //TODO : Test

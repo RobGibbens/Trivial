@@ -11,6 +11,8 @@ Target "all" (fun() ->
    trace "Running all"
 )
 
+
+
 //DONE
 Target "core-build" (fun () ->
     RestorePackages "Trivial.Core.sln"
@@ -141,7 +143,7 @@ Target "android-testcloud" (fun () ->
 
     getBuildParam "devices" |> RunTestCloudTests appPath
 )
-
+  
 "core-build"
   ==> "core-tests"
 
@@ -162,6 +164,11 @@ Target "android-testcloud" (fun () ->
 
 "android-build"
   ==> "android-package"
+
+//TODO : Update iOS version number
+//TODO : Update Android version number
+//TODO : Upload build to HockeyApp
+//TODO : Add FxCop
 
 "core-build"
   ==> "core-tests"
